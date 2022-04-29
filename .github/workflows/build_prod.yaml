@@ -21,6 +21,7 @@ jobs:
           ~/.cache/pants/setup
           ~/.cache/pants/lmdb_store
           ~/.cache/pants/named_caches
+        key: ${{ runner.os }}-
     - name: Setup Python
       uses: actions/setup-python@v1
       with:

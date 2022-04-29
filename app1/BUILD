@@ -5,6 +5,6 @@ docker_image(
     image_tags=[
         "0.1.0-{build_args.TYPE}",
         "{build_args.TYPE}-{build_args.GIT_COMMIT}",
-        "{build_args.TYPE}"
-    ]
+        "{build_args.TYPE}",
+    ],
 )

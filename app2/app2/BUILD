@@ -6,8 +6,4 @@ python_requirement(
     requirements=["gunicorn"],
 )
 
-pex_binary(
-    name="app",
-    dependencies=[":gunicorn", ":app2"]
-)
-
+pex_binary(name="app", dependencies=[":gunicorn", ":app2"])

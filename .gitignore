@@ -1,0 +1,9 @@
+/.pants.d/
+/dist/
+/.pids
+/.pants.workdir.file_lock*
+/.pants.rc
+.projectile
+.secrets
+__pycache__/
+.pytest_cache/

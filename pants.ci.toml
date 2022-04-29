@@ -1,0 +1,10 @@
+[stats]
+log = true
+
+[test]
+use_coverage = true
+
+[coverage-py]
+report = ["xml"]
+global_report = true
+

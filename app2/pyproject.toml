@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "app2"
+version = "0.1.0"
+description = ""
+authors = ["Diego Rodriguez Mancini <diegorodriguezmancini@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.1.2"
+lib1-monorepo = { path = "../lib1", develop = true }
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

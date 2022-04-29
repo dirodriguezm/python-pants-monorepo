@@ -1,0 +1,40 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Perform lints and tests
+    env:
+      PANTS_CONFIG_FILES: pants.ci.toml
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      id: cache
+      with:
+        path: |
+          ~/.cache/pants/setup
+          ~/.cache/pants/lmdb_store
+          ~/.cache/pants/named_caches
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Bootstrap Pants
+      run: |
+        ./pants --version
+    - name: Check BUILD files
+      run: ./pants tailor --check update-build-files --check
+    - name: Lint
+      run: |
+        ./pants --changed-since=origin/main lint
+    - name: Tests
+      run: |
+        ./pants \
+        --changed-since=origin/main \
+        --changed-dependees=transitive \
+        check test

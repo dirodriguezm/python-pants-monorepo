@@ -33,7 +33,7 @@ jobs:
       run: ./pants tailor --check update-build-files --check
     - name: Package
       run: |
-        ./pants --changed-since=origin/main --changed-dependees=transitive package
+        ./pants --changed-since=main --changed-dependees=transitive package
     - name: Publish
       run: |
         export GIT_COMMIT=$(git rev-parse --short HEAD)
@@ -41,4 +41,4 @@ jobs:
         export TYPE=stable
         export TWINE_USERNAME=${{ secrets.TWINE_USERNAME }}
         export TWINE_PASSWORD=${{ secrets.TWINE_PASSWORD }}
-        ./pants --changed-since=origin/main --changed-dependees=transitive package
+        ./pants --changed-since=main --changed-dependees=transitive package

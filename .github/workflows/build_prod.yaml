@@ -33,10 +33,10 @@ jobs:
       run: ./pants tailor --check update-build-files --check
     - name: Package
       run: |
-        ./pants --changed-since=origin/main --changed-dependees=transitive package
+        ./pants --changed-since=main --changed-dependees=transitive package
     - name: Publish
       run: |
         export GIT_COMMIT=$(git rev-parse --short HEAD)
         export VERSION=rc-$GIT_COMMIT
         export TYPE=rc
-        ./pants --changed-since=origin/main --changed-dependees=transitive package
+        ./pants --changed-since=main --changed-dependees=transitive package

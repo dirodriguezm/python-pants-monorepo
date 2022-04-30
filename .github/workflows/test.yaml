@@ -34,10 +34,10 @@ jobs:
       run: ./pants tailor --check update-build-files --check
     - name: Lint
       run: |
-        ./pants --changed-since=main lint
+        ./pants --changed-since=origin/main lint
     - name: Tests
       run: |
         ./pants \
-        --changed-since=main \
+        --changed-since=origin/main \
         --changed-dependees=transitive \
         check test

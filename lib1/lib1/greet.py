@@ -6,3 +6,8 @@ class Greeter:
         text = green(f"Hello, {name}")
         print(text)
         return text
+
+    def goodbye(self, name):
+        text = f"Goodbye, {name}"
+        print(text)
+        return text

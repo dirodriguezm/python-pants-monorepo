@@ -8,7 +8,7 @@ python_distribution(
     dependencies=[":lib"],
     provides=python_artifact(
         name="lib1-monorepo",
-        version="0.1.2",
+        version="0.1.3",
     ),
     repositories=["https://test.pypi.org/legacy/"],
 )

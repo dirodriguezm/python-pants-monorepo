@@ -46,4 +46,4 @@ jobs:
         export VERSION=$TYPE-$GIT_COMMIT
         export TWINE_USERNAME=${{ secrets.TWINE_USERNAME }}
         export TWINE_PASSWORD=${{ secrets.TWINE_PASSWORD }}
-        ./pants --changed-since=origin/main --changed-dependees=transitive package
+        ./pants --changed-since=origin/main --changed-dependees=transitive publish

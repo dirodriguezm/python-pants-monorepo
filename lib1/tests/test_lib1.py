@@ -3,7 +3,7 @@ from lib1.greet import Greeter
 
 
 def test_version():
-    assert __version__ == "0.1.2"
+    assert __version__ == "0.1.3"
 
 
 def test_greet():

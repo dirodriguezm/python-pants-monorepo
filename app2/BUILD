@@ -1,10 +1,15 @@
 docker_image(
     name="docker_app2",
-    registries=["@test-registry"],
-    repository="app2",
     image_tags=[
-        "0.1.0-{build_args.TYPE}",
-        "{build_args.TYPE}-{build_args.GIT_COMMIT}",
         "{build_args.TYPE}",
+        "{build_args.TYPE}-{build_args.GIT_COMMIT}",
     ],
 )
+pex_binary(
+    name="app2_pex",
+    dependencies=[ ":poetry", "app2/app2:app2_source"]
+)
+poetry_requirements(
+    name="poetry",
+)
+

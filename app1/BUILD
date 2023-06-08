@@ -1,10 +1,15 @@
+pex_binary(
+    name="app1_pex",
+    entry_point="app1.app:main"
+)
 docker_image(
-    name="docker_app1",
-    registries=["@test-registry"],
-    repository="app1",
+    name="app1",
     image_tags=[
-        "0.1.0-{build_args.TYPE}",
-        "{build_args.TYPE}-{build_args.GIT_COMMIT}",
         "{build_args.TYPE}",
+        "{build_args.TYPE}-{build_args.GIT_COMMIT}",
     ],
+    extra_build_args=["GIT_COMMIT", "TYPE"]
+)
+poetry_requirements(
+    name="poetry",
 )

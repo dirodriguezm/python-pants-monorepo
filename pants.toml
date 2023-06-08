@@ -1,16 +1,11 @@
 [GLOBAL]
-pants_version = "2.10.0"
+pants_version = "2.15.0"
 backend_packages = [
   "pants.backend.python",
-  "pants.backend.experimental.python",
   "pants.backend.python.lint.black",
   "pants.backend.docker",
 ]
 [source]
-# root_patterns = [
-#   '/packages/app1',
-#   '/packages/lib1'
-# ]
 marker_filenames = ["pyproject.toml"]
 
 [docker]

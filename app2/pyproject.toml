@@ -8,6 +8,7 @@ authors = ["Diego Rodriguez Mancini <diegorodriguezmancini@gmail.com>"]
 python = "^3.8"
 Flask = "^2.1.2"
 lib1-monorepo = { path = "../lib1", develop = true }
+gunicorn = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -9,6 +9,7 @@ python = "^3.8"
 Flask = "^2.1.2"
 lib1-monorepo = { path = "../lib1", develop = true }
 gunicorn = "*"
+confluent-kafka = "2.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

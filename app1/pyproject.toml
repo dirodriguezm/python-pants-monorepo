@@ -7,6 +7,7 @@ authors = ["Diego Rodriguez Mancini <diegorodriguezmancini@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 lib1-monorepo = { path = "../lib1", develop = true }
+lib2 = { path = "../lib2", develop = true }
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

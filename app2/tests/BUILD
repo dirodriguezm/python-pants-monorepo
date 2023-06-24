@@ -1,1 +1,1 @@
-python_tests()
+python_tests(resolve="app2")

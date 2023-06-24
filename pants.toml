@@ -13,3 +13,12 @@ build_args = ["GIT_COMMIT", "TYPE"]
 
 [docker.registries.test-registry]
 address = "ghcr.io/dirodriguezm"
+
+[python]
+enable_resolves = true
+default_resolve = "default"
+
+[python.resolves]
+default = "3rdparty/python/default.lock"
+app1 = "3rdparty/python/app1.lock"
+app2 = "3rdparty/python/app2.lock"

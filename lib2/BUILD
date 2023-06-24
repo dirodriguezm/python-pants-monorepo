@@ -1,4 +1,4 @@
 poetry_requirements(
     name="poetry",
-    resolve=parametrize("app1", "app2")
+    resolve="app1"
 )

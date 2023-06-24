@@ -1,6 +1,7 @@
 pex_binary(
     name="app1_pex",
-    entry_point="app1.app:main"
+    entry_point="app1.app:main",
+    resolve="app1"
 )
 docker_image(
     name="app1",
@@ -12,4 +13,5 @@ docker_image(
 )
 poetry_requirements(
     name="poetry",
+    resolve="app1"
 )

@@ -15,5 +15,5 @@ poetry_requirements(
     resolve="app2"
 )
 
-python_tests(name="app2_tests", resolve="app2", sources=["tests/**/*.py"])
 python_sources(name="app2", resolve="app2", sources=["app2/**/*.py"])
+python_tests(name="app2_tests", resolve="app2", sources=["tests/**/test*.py"])

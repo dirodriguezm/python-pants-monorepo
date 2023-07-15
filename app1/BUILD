@@ -4,7 +4,7 @@ pex_binary(
     resolve="app1"
 )
 docker_image(
-    name="app1-docker",
+    name="app1_docker",
     image_tags=[
         "{build_args.TYPE}",
         "{build_args.TYPE}-{build_args.GIT_COMMIT}",
@@ -18,4 +18,4 @@ poetry_requirements(
 
 python_sources(name="app1",sources=["app1/**/*.py"], resolve="app1")
 
-python_tests(name="app1_tests", resolve="app1", sources=[ "tests/**/*.py" ])
+python_tests(name="app1_tests", resolve="app1", sources=["tests/**/test_*.py"])

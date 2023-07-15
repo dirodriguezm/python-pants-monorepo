@@ -34,5 +34,5 @@ jobs:
       run: |
         pants \
         --changed-since=origin/main \
-        --changed-dependees=transitive \
+        --changed-dependents=transitive \
         check test

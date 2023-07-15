@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.15.0"
+pants_version = "2.16.0"
 backend_packages = [
   "pants.backend.python",
   "pants.backend.python.lint.black",
@@ -17,8 +17,13 @@ address = "ghcr.io/dirodriguezm"
 [python]
 enable_resolves = true
 default_resolve = "default"
+interpreter_constraints=[">=3.8"]
 
 [python.resolves]
 default = "3rdparty/python/default.lock"
 app1 = "3rdparty/python/app1.lock"
 app2 = "3rdparty/python/app2.lock"
+
+[anonymous-telemetry]
+enabled = true
+repo_id = "583024f8-f57f-4289-aeda-df3974df1364"

@@ -1,0 +1,40 @@
+* Python Pants Monorepo Example
+** Setup
+Official documentation: https://www.pantsbuild.org/docs/installation
+
+*** =~/bin= install (Linux)
+#+begin_src shell
+curl --proto '=https' --tlsv1.2 -fsSL https://static.pantsbuild.org/setup/get-pants.sh | bash
+#+end_src
+*** brew install (MacOS)
+#+begin_src shell
+brew install pantsbuild/tap/pants
+#+end_src
+** 3rdparty
+Each application can =resolve= its dependencies separated from the other apps.
+
+Assuming we are using poetry, then each app will contain a =poetry_requirements= target on its BUILD file and optionally (recommended) specifying a =resolve= name.
+
+This will generate a lockfile in =3rdparty/python/<resolve_name>.lock=. This lockfile contains dependency resolution and virtual env information.
+** Setup Editor
+Run the =set_pythonpath.sh= script to generate a .env file that will be used by VSCode and a .dir-locals.env to create the same effect for Emacs.
+
+Then, to generate a virtual environment for the application(s) you will be developing, use =pants export= utility like this:
+
+#+begin_src shell
+pants export --py-resolve-format=symlinked_immutable_virtualenv --resolve=app2 --resolve=app1
+#+end_src
+
+This will create an immutable virtual environment that does not have pip installed. If you need to modify the virtual env use without the =--py-resolve-format= or generate a new one afterwards using the same command.
+
+Now you only need to tell the editor to load the virtualenv.
+
+#+begin_quote
+**NOTE** I could not manage to tell vscode to use the created virtualenv. Works on Emacs though.
+#+end_quote
+** Packages
+*** [[org:../../ALeRCE/python-pants-monorepo/app1/README.org][App 1]]
+*** [[org:../../ALeRCE/python-pants-monorepo/app2/README.org][App 2]]
+*** App 3
+*** [[org:../../ALeRCE/python-pants-monorepo/lib1/README.org][Lib 1]]
+*** [[org:../../ALeRCE/python-pants-monorepo/lib2/README.org][Lib 2]]

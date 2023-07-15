@@ -26,7 +26,7 @@ jobs:
         gha-cache-key: cache0-py${{ matrix.python_version }}
         named-caches-hash: ${{ hashFiles('3rdparty/python/*.lock') }}
     - name: Check BUILD files
-      run: ./pants tailor --check update-build-files --check
+      run: pants tailor --check update-build-files --check
     - name: Lint
       run: |
         pants --changed-since=origin/main lint

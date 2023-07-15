@@ -7,7 +7,7 @@ docker_image(
 )
 pex_binary(
     name="app2_pex",
-    dependencies=[ ":poetry", "app2/app2:app2_source"],
+    dependencies=[ ":poetry", "app2:app2"],
     resolve="app2"
 )
 poetry_requirements(
@@ -15,3 +15,5 @@ poetry_requirements(
     resolve="app2"
 )
 
+python_tests(name="app2_tests", resolve="app2", sources=["tests/**/*.py"])
+python_sources(name="app2", resolve="app2", sources=["app2/**/*.py"])
